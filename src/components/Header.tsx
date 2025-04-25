@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Github, Twitter, Book, ChevronDown } from 'lucide-react';
 import { motion } from 'framer-motion';
+import logoImage from '../assets/images/forgelogo.png';
 
 const Header: React.FC = () => {
   return (
@@ -15,13 +16,16 @@ const Header: React.FC = () => {
         <div className="flex items-center gap-2">
           <Link to="/" className="flex items-center space-x-2">
             <motion.div 
-              className="bg-blue-600 text-white font-bold text-xl p-1 rounded"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
+              className="flex items-center"
             >
-              F
+              <img 
+                src={logoImage} 
+                alt="Forge Logo" 
+                className="h-8 w-auto" 
+              />
             </motion.div>
-            <span className="font-bold text-xl hidden sm:inline-block text-gray-100">Forge Framework</span>
           </Link>
         </div>
         <nav className="flex items-center gap-6">

@@ -10,13 +10,13 @@ export const docsData: DocSection[] = [
         title: "Introduction",
         slug: "introduction",
         content: `
-# Forge Framework
+# Forge! the GoPowerhouse
 
-Forge is a modern, web framework for Go — designed to combine developer happiness, performance, and structure.
+Forge is a modern, web framework for Go — designed to combine developer happiness, performance, and structure. Choose Convention over configuration that may take you hours
 
 ## Why Forge?
 
-Forge is built on top of the [Fiber](https://github.com/gofiber/fiber) web framework, leveraging its high-performance foundation while adding our own unique approaches and abstractions. We've built Forge to provide a more structured, convention-over-configuration approach compared to the minimalist design of Fiber.
+Forge is built on top of the Fiber web framework, leveraging its high-performance foundation while adding our own unique approaches and abstractions. We've built Forge to provide a more structured, convention-over-configuration approach compared to the minimalist design of Fiber.
 
 While using Fiber's exceptional performance characteristics, we've implemented several unique approaches including:
 
@@ -24,7 +24,7 @@ While using Fiber's exceptional performance characteristics, we've implemented s
 2. Powerful validation and request binding system 
 3. Advanced middleware system inspired by Express.js
 4. Comprehensive scaffolding tools for rapid development
-5. Built-in support for databases, authentication, and other common web application needs
+5. Built-in support for databases, authentication, and other common web application needs.
 
 ### Key Features
 
@@ -54,7 +54,7 @@ Before installing Forge, ensure you have the following:
 
 - Go 1.18 or later installed
 - Basic familiarity with Go programming
-- Git installed (for cloning the repository)
+
 
 ## Installing Forge CLI
 
@@ -67,17 +67,18 @@ go install github.com/goforgl/forge/cmd/forge@latest
 Verify the installation with:
 
 \`\`\`bash
+forge
+\`\`\`
+
+\`\`\`bash
 forge --version
 \`\`\`
 
-## Manual Installation
+## Tidy the Installation:
 
-If you prefer to install from source:
 
 \`\`\`bash
-git clone https://github.com/goforgl/forge.git
-cd forge
-go install ./cmd/forge
+go mod tidy
 \`\`\`
 
 Now that you have Forge installed, you're ready to create your first project!
