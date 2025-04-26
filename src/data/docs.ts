@@ -238,10 +238,10 @@ service-name/
 
 The right architecture depends on your specific needs:
 
-- **Team size and expertise**: Microservices require more DevOps knowledge
-- **Project scope**: Larger projects benefit more from microservices
-- **Scale requirements**: If different components need different scaling characteristics
-- **Development speed**: Monoliths are often faster to develop initially
+- Team size and expertise: Microservices require more DevOps knowledge
+- Project scope: Larger projects benefit more from microservices
+- Scale requirements: If different components need different scaling characteristics
+- Development speed: Monoliths are often faster to develop initially
 
 Forge supports both approaches, and you can even start with a monolith and migrate to microservices as your application grows.
         `
