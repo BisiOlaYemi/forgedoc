@@ -496,13 +496,13 @@ Forge includes built-in CORS support. Configure it in your application:
 
 \`\`\`go
 app, err := forge.New(&forge.Config{
-    // Other config...
+    
     CORS: forge.CORSConfig{
         AllowOrigins:     "http://localhost:3000,https://example.com",
         AllowMethods:     "GET,POST,PUT,DELETE",
         AllowHeaders:     "Origin, Content-Type, Accept, Authorization",
         AllowCredentials: true,
-        MaxAge:           86400, // 24 hours
+        MaxAge:           86400, 
     },
 })
 \`\`\`
@@ -524,7 +524,7 @@ Forge includes a powerful CLI tool to help you scaffold and manage your applicat
 ## Available Commands
 
 | Command | Description |
-|---------|-------------|
+
 | \`forge new <name>\` | Create a new monolithic Forge project |
 | \`forge serve\` | Start the development server with hot reload |
 | \`forge make:controller <name>\` | Generate a new controller |
@@ -856,7 +856,7 @@ Or programmatically in your \`main.go\`:
 
 \`\`\`go
 app, err := forge.New(&forge.Config{
-    // Other config...
+    
     Database: forge.DatabaseConfig{
         Driver:   "postgres",
         Host:     "localhost",
@@ -944,7 +944,7 @@ Enable SQL query logging in development mode:
 \`\`\`go
 app, err := forge.New(&forge.Config{
     // Other config...
-    LogLevel: "debug",  // This enables SQL logging
+    LogLevel: "debug",  // This will enable SQL logging
 })
 \`\`\`
 
@@ -1078,11 +1078,11 @@ if err := app.RunMigrations(); err != nil {
 
 ## Best Practices
 
-1. **Keep migrations small and focused**: Each migration should do one thing
-2. **Make migrations reversible**: Always implement both Up and Down methods
-3. **Test migrations**: Ensure they run correctly on a test database
-4. **Use transactions**: Wrap complex migrations in transactions
-5. **Version control**: Always commit migrations to your repository
+1. Keep migrations small and focused: Each migration should do one thing
+2. Make migrations reversible: Always implement both Up and Down methods
+3. Test migrations: Ensure they run correctly on a test database
+4. Use transactions: Wrap complex migrations in transactions
+5. Version control: Always commit migrations to your repository
 
 Migrations are a crucial part of database management, enabling you to evolve your schema over time in a controlled, reversible manner.
         `

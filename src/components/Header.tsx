@@ -59,7 +59,7 @@ const Header: React.FC = () => {
           </div>
           <div className="flex items-center gap-3">
             <a
-              href="https://github.com/forgeframework/forge"
+              href="https://github.com/goforgl/forge"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center rounded-md text-sm font-medium text-gray-300 transition-colors hover:text-blue-400"
