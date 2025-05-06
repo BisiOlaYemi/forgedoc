@@ -10,13 +10,13 @@ export const docsData: DocSection[] = [
         title: "Introduction",
         slug: "introduction",
         content: `
-# Forge! the GoPowerhouse
+# Flux! the GoPowerhouse
 
-Forge is a modern, web framework for Go — designed to combine developer happiness, performance, and structure. Choose Convention over configuration that may take you hours
+Flux is a modern, web framework for Go — designed to combine developer happiness, performance, and structure. Choose Convention over configuration that may take you hours
 
-## Why Forge?
+## Why Flux?
 
-Forge is built on top of the Fiber web framework, leveraging its high-performance foundation while adding our own unique approaches and abstractions. We've built Forge to provide a more structured, convention-over-configuration approach compared to the minimalist design of Fiber.
+Flux is built on top of the Fiber web framework, leveraging its high-performance foundation while adding our own unique approaches and abstractions. We've built Flux to provide a more structured, convention-over-configuration approach compared to the minimalist design of Fiber.
 
 While using Fiber's exceptional performance characteristics, we've implemented several unique approaches including:
 
@@ -38,7 +38,7 @@ While using Fiber's exceptional performance characteristics, we've implemented s
 - Extensible Plugins: File uploads, RBAC, jobs, and more
 - Full-Stack Ready: With template support or HTMX/SPA integration
 
-Get started with Forge today and experience the power of modern Go development with the perfect balance of structure and performance!
+Get started with Flux today and experience the power of modern Go development with the perfect balance of structure and performance!
         `
       },
       {
@@ -50,28 +50,28 @@ Get started with Forge today and experience the power of modern Go development w
 
 ## Prerequisites
 
-Before installing Forge, ensure you have the following:
+Before installing Flux, ensure you have the following:
 
 - Go 1.18 or later installed
 - Basic familiarity with Go programming
 
 
-## Installing Forge CLI
+## Installing Flux CLI
 
-The simplest way to install Forge is via the Go package manager:
+The simplest way to install Flux is via the Go package manager:
 
 \`\`\`bash
-go install github.com/goforgl/forge/cmd/forge@latest
+go install github.com/Fluxgo/flux/cmd/flux@latest
 \`\`\`
 
 Verify the installation with:
 
 \`\`\`bash
-forge
+flux
 \`\`\`
 
 \`\`\`bash
-forge --version
+flux --version
 \`\`\`
 
 ## Tidy the Installation:
@@ -81,7 +81,7 @@ forge --version
 go mod tidy
 \`\`\`
 
-Now that you have Forge installed, you're ready to create your first project!
+Now that you have Flux installed, you're ready to create your first project!
         `
       },
       {
@@ -93,16 +93,16 @@ Now that you have Forge installed, you're ready to create your first project!
 
 ## Creating a New Project
 
-Create a new Forge application:
+Create a new Flux application:
 
 \`\`\`bash
-forge new my-app
+flux new my-app
 cd my-app
 \`\`\`
 
 ## Project Structure
 
-A new Forge project will have the following structure:
+A new Flux project will have the following structure:
 
 \`\`\`
 my-app/
@@ -118,7 +118,7 @@ my-app/
 ├── public/               # Static assets
 ├── routes/               # Generated route files
 ├── templates/            # View templates (optional)
-├── forge.yaml            # Main configuration
+├── flux.yaml            # Main configuration
 ├── go.mod                # Go module definition
 └── main.go               # Application entry point
 \`\`\`
@@ -128,7 +128,7 @@ my-app/
 Start the development server with hot-reloading:
 
 \`\`\`bash
-forge serve
+flux serve
 \`\`\`
 
 Or run it directly with Go:
@@ -139,10 +139,10 @@ go run main.go
 
 ## Creating Your First Controller
 
-Generate a new controller with the Forge CLI:
+Generate a new controller with the Flux CLI:
 
 \`\`\`bash
-forge make:controller User
+flux make:controller User
 \`\`\`
 
 This will create a new controller at \`app/controllers/user_controller.go\` with basic CRUD operations.
@@ -157,7 +157,7 @@ Now that you have a running application, explore the following sections to learn
 - Authentication
 - Testing your application
 
-Forge makes it easy to build robust web applications while maintaining the performance and simplicity of Go!
+Flux makes it easy to build robust web applications while maintaining the performance and simplicity of Go!
         `
       }
     ]
@@ -173,7 +173,7 @@ Forge makes it easy to build robust web applications while maintaining the perfo
         content: `
 # Architecture Options
 
-Forge supports two primary architectural patterns, giving you the flexibility to choose the best approach for your project.
+Flux supports two primary architectural patterns, giving you the flexibility to choose the best approach for your project.
 
 ## 1. Monolithic Architecture
 
@@ -193,7 +193,7 @@ myapp/
 ├── database/             # Migrations/seeders
 ├── routes/               # Route groups
 ├── templates/            # Optional views
-├── forge.yaml            # Project config
+├── flux.yaml            # Project config
 └── main.go
 \`\`\`
 
@@ -243,7 +243,7 @@ The right architecture depends on your specific needs:
 - Scale requirements: If different components need different scaling characteristics
 - Development speed: Monoliths are often faster to develop initially
 
-Forge supports both approaches, and you can even start with a monolith and migrate to microservices as your application grows.
+Flux supports both approaches, and you can even start with a monolith and migrate to microservices as your application grows.
         `
       },
       {
@@ -253,11 +253,11 @@ Forge supports both approaches, and you can even start with a monolith and migra
         content: `
 # Routing and Controllers
 
-Forge implements a convention-based routing system that automatically maps controller methods to HTTP routes.
+Flux implements a convention-based routing system that automatically maps controller methods to HTTP routes.
 
 ## Controller-Based Routing
 
-Controllers in Forge are Go structs that embed the \`forge.Controller\` type. Methods on these controllers are automatically mapped to HTTP routes based on naming conventions.
+Controllers in Flux are Go structs that embed the \`flux.Controller\` type. Methods on these controllers are automatically mapped to HTTP routes based on naming conventions.
 
 Here's a basic example of controller-based routing:
 
@@ -265,45 +265,45 @@ Here's a basic example of controller-based routing:
 package controllers
 
 import (
-    "github.com/goforgl/forge/pkg/forge"
+    "github.com/Fluxgo/flux/pkg/flux"
 )
 
 // UserController handles user-related requests
 // Routes will be prefixed with "/user"
 type UserController struct {
-    forge.Controller
+    flux.Controller
 }
 
 // HandleGetUsers handles GET /user
-func (c *UserController) HandleGetUsers(ctx *forge.Context) error {
-    return ctx.JSON(forge.H{
+func (c *UserController) HandleGetUsers(ctx *flux.Context) error {
+    return ctx.JSON(flux.H{
         "users": []string{"John", "Jane", "Bob"},
     })
 }
 
 // HandleGetUserById handles GET /user/:id
-func (c *UserController) HandleGetUserById(ctx *forge.Context) error {
+func (c *UserController) HandleGetUserById(ctx *flux.Context) error {
     id := ctx.Param("id")
-    return ctx.JSON(forge.H{
+    return ctx.JSON(flux.H{
         "id": id,
         "name": "John Doe",
     })
 }
 
 // HandlePostUser handles POST /user
-func (c *UserController) HandlePostUser(ctx *forge.Context) error {
+func (c *UserController) HandlePostUser(ctx *flux.Context) error {
     var user struct {
         Name  string \`json:"name" validate:"required"\`
         Email string \`json:"email" validate:"required,email"\`
     }
     
     if err := ctx.Bind(&user); err != nil {
-        return ctx.Status(400).JSON(forge.H{
+        return ctx.Status(400).JSON(flux.H{
             "error": "Invalid request body",
         })
     }
     
-    return ctx.Status(201).JSON(forge.H{
+    return ctx.Status(201).JSON(flux.H{
         "message": "User created",
         "user": user,
     })
@@ -312,7 +312,7 @@ func (c *UserController) HandlePostUser(ctx *forge.Context) error {
 
 ## Route Naming Conventions
 
-Forge uses the following naming conventions for controller methods:
+Flux uses the following naming conventions for controller methods:
 
 - Methods must be prefixed with \`Handle\` followed by the HTTP method (\`Get\`, \`Post\`, \`Put\`, \`Delete\`, etc.)
 - The rest of the method name becomes the route path, with camel case converted to kebab case
@@ -330,10 +330,10 @@ To use your controllers, register them in your \`main.go\` file:
 
 \`\`\`go
 func main() {
-    app, err := forge.New(&forge.Config{
+    app, err := flux.New(&flux.Config{
         Name:    "my-app",
         Version: "0.1.0",
-        Server: forge.ServerConfig{
+        Server: flux.ServerConfig{
             Port: 3000,
         },
     })
@@ -370,7 +370,7 @@ Group related routes with a common prefix and middleware:
 
 \`\`\`go
 // Create a group with shared middleware
-api := (&forge.Controller{}).Group("/api")
+api := (&flux.Controller{}).Group("/api")
 api.Use(middleware.RequireAuth())
 
 // Add controllers to the group
@@ -391,24 +391,24 @@ This simple yet powerful routing system makes it easy to organize your applicati
         content: `
 # Middleware System
 
-Forge provides a powerful middleware system inspired by Express.js, allowing you to execute code before and after route handlers.
+Flux provides a powerful middleware system inspired by Express.js, allowing you to execute code before and after route handlers.
 
 ## Creating Middleware
 
-Middleware in Forge are functions that take a \`forge.HandlerFunc\` and return another \`forge.HandlerFunc\`:
+Middleware in Flux are functions that take a \`flux.HandlerFunc\` and return another \`flux.HandlerFunc\`:
 
 \`\`\`go
 package middleware
 
 import (
     "time"
-    "github.com/goforgl/forge/pkg/forge"
+    "github.com/Fluxgo/flux/pkg/flux"
 )
 
 // Logger middleware logs requests and their durations
-func Logger() forge.MiddlewareFunc {
-    return func(next forge.HandlerFunc) forge.HandlerFunc {
-        return func(ctx *forge.Context) error {
+func Logger() flux.MiddlewareFunc {
+    return func(next flux.HandlerFunc) flux.HandlerFunc {
+        return func(ctx *flux.Context) error {
             start := time.Now()
             
             // Call the next handler
@@ -424,13 +424,13 @@ func Logger() forge.MiddlewareFunc {
 }
 
 // RequireAuth middleware checks for authorization
-func RequireAuth() forge.MiddlewareFunc {
-    return func(next forge.HandlerFunc) forge.HandlerFunc {
-        return func(ctx *forge.Context) error {
+func RequireAuth() flux.MiddlewareFunc {
+    return func(next flux.HandlerFunc) flux.HandlerFunc {
+        return func(ctx *flux.Context) error {
             token := ctx.Get("Authorization")
             
             if token == "" {
-                return ctx.Status(401).JSON(forge.H{
+                return ctx.Status(401).JSON(flux.H{
                     "error": "Unauthorized",
                 })
             }
@@ -468,7 +468,7 @@ app.RegisterController(userController)
 
 \`\`\`go
 // Create a group with shared middleware
-api := (&forge.Controller{}).Group("/api")
+api := (&flux.Controller{}).Group("/api")
 api.Use(middleware.Recover(), middleware.RequestLogger())
 
 // Add controllers to the group
@@ -481,7 +481,7 @@ api.Register(app)
 
 ## Built-in Middleware
 
-Forge includes several built-in middleware functions:
+Flux includes several built-in middleware functions:
 
 - \`RequestLogger()\`: Logs request information and timing
 - \`Recover()\`: Catches panics and converts them to errors
@@ -492,12 +492,12 @@ Forge includes several built-in middleware functions:
 
 ## CORS Configuration
 
-Forge includes built-in CORS support. Configure it in your application:
+Flux includes built-in CORS support. Configure it in your application:
 
 \`\`\`go
-app, err := forge.New(&forge.Config{
+app, err := flux.New(&flux.Config{
     
-    CORS: forge.CORSConfig{
+    CORS: flux.CORSConfig{
         AllowOrigins:     "http://localhost:3000,https://example.com",
         AllowMethods:     "GET,POST,PUT,DELETE",
         AllowHeaders:     "Origin, Content-Type, Accept, Authorization",
@@ -507,9 +507,9 @@ app, err := forge.New(&forge.Config{
 })
 \`\`\`
 
-If not specified, Forge uses a permissive default CORS configuration that allows all origins.
+If not specified, Flux uses a permissive default CORS configuration that allows all origins.
 
-The middleware system in Forge allows you to easily add cross-cutting concerns like logging, authentication, and error handling to your application in a clean and maintainable way.
+The middleware system in Flux allows you to easily add cross-cutting concerns like logging, authentication, and error handling to your application in a clean and maintainable way.
         `
       },
       {
@@ -519,32 +519,32 @@ The middleware system in Forge allows you to easily add cross-cutting concerns l
         content: `
 # CLI Overview
 
-Forge includes a powerful CLI tool to help you scaffold and manage your application.
+Flux includes a powerful CLI tool to help you scaffold and manage your application.
 
 ## Available Commands
 
 | Command | Description |
 
-| \`forge new <name>\` | Create a new monolithic Forge project |
-| \`forge serve\` | Start the development server with hot reload |
-| \`forge make:controller <name>\` | Generate a new controller |
-| \`forge make:model <name>\` | Generate a new model |
-| \`forge make:middleware <name>\` | Generate a new middleware |
-| \`forge make:service <name>\` | Generate a new service |
-| \`forge make:microservice <name>\` | Generate a new microservice project |
-| \`forge db:migrate\` | Run database migrations |
-| \`forge db:rollback\` | Roll back the last database migration |
-| \`forge db:seed\` | Run database seeders |
-| \`forge doc:generate\` | Generate OpenAPI documentation |
+| \`flux new <name>\` | Create a new monolithic Flux project |
+| \`flux serve\` | Start the development server with hot reload |
+| \`flux make:controller <name>\` | Generate a new controller |
+| \`flux make:model <name>\` | Generate a new model |
+| \`flux make:middleware <name>\` | Generate a new middleware |
+| \`flux make:service <name>\` | Generate a new service |
+| \`flux make:microservice <name>\` | Generate a new microservice project |
+| \`flux db:migrate\` | Run database migrations |
+| \`flux db:rollback\` | Roll back the last database migration |
+| \`flux db:seed\` | Run database seeders |
+| \`flux doc:generate\` | Generate OpenAPI documentation |
 
 ## Creating New Projects
 
 \`\`\`bash
 # Create a new monolithic application
-forge new my-application
+flux new my-application
 
 # Create a new microservice
-forge make:microservice user-service
+flux make:microservice user-service
 \`\`\`
 
 ## Scaffolding Components
@@ -553,16 +553,16 @@ The CLI provides several commands for scaffolding different parts of your applic
 
 \`\`\`bash
 # Create a new controller
-forge make:controller User
+flux make:controller User
 
 # Create a new model with a migration
-forge make:model Product --migration
+flux make:model Product --migration
 
 # Create a new middleware
-forge make:middleware Authorize
+flux make:middleware Authorize
 
 # Create a new microservice
-forge make:microservice payment-service --with-db --with-auth
+flux make:microservice payment-service --with-db --with-auth
 \`\`\`
 
 ## Microservice Options
@@ -570,7 +570,7 @@ forge make:microservice payment-service --with-db --with-auth
 When creating microservices, you can use flags to include common dependencies:
 
 \`\`\`bash
-forge make:microservice order-service --with-db --with-auth --with-cache
+flux make:microservice order-service --with-db --with-auth --with-cache
 \`\`\`
 
 Available flags:
@@ -583,20 +583,20 @@ Available flags:
 
 \`\`\`bash
 # Start the development server with hot reload
-forge serve
+flux serve
 
 # Run database migrations
-forge db:migrate
+flux db:migrate
 
 # Generate OpenAPI documentation
-forge doc:generate
+flux doc:generate
 \`\`\`
 
 ## Configuration
 
-The CLI uses settings from your \`forge.yaml\` file to customize its behavior. You can also pass additional flags to most commands for fine-grained control.
+The CLI uses settings from your \`flux.yaml\` file to customize its behavior. You can also pass additional flags to most commands for fine-grained control.
 
-The Forge CLI is designed to streamline your development workflow and help you focus on building your application rather than boilerplate code.
+The Flux CLI is designed to streamline your development workflow and help you focus on building your application rather than boilerplate code.
         `
       },
       {
@@ -606,14 +606,14 @@ The Forge CLI is designed to streamline your development workflow and help you f
         content: `
 # Scaffolding
 
-Forge's scaffolding tools help you generate code and structure your project following best practices.
+Flux's scaffolding tools help you generate code and structure your project following best practices.
 
 ## Controller Scaffolding
 
 Generate a new controller with:
 
 \`\`\`bash
-forge make:controller User
+flux make:controller User
 \`\`\`
 
 This creates a file at \`app/controllers/user_controller.go\` with this structure:
@@ -622,50 +622,50 @@ This creates a file at \`app/controllers/user_controller.go\` with this structur
 package controllers
 
 import (
-    "github.com/goforgl/forge/pkg/forge"
+    "github.com/Fluxgo/flux/pkg/flux"
 )
 
 // UserController handles user-related endpoints
 type UserController struct {
-    forge.Controller
+    flux.Controller
 }
 
 // HandleGetUsers handles GET /user
-func (c *UserController) HandleGetUsers(ctx *forge.Context) error {
-    return ctx.JSON(forge.H{
+func (c *UserController) HandleGetUsers(ctx *flux.Context) error {
+    return ctx.JSON(flux.H{
         "message": "List all users",
     })
 }
 
 // HandleGetUserById handles GET /user/:id
-func (c *UserController) HandleGetUserById(ctx *forge.Context) error {
+func (c *UserController) HandleGetUserById(ctx *flux.Context) error {
     id := ctx.Param("id")
-    return ctx.JSON(forge.H{
+    return ctx.JSON(flux.H{
         "message": "Get user",
         "id": id,
     })
 }
 
 // HandlePostUser handles POST /user
-func (c *UserController) HandlePostUser(ctx *forge.Context) error {
-    return ctx.JSON(forge.H{
+func (c *UserController) HandlePostUser(ctx *flux.Context) error {
+    return ctx.JSON(flux.H{
         "message": "Create user",
     })
 }
 
 // HandlePutUserById handles PUT /user/:id
-func (c *UserController) HandlePutUserById(ctx *forge.Context) error {
+func (c *UserController) HandlePutUserById(ctx *flux.Context) error {
     id := ctx.Param("id")
-    return ctx.JSON(forge.H{
+    return ctx.JSON(flux.H{
         "message": "Update user",
         "id": id,
     })
 }
 
 // HandleDeleteUserById handles DELETE /user/:id
-func (c *UserController) HandleDeleteUserById(ctx *forge.Context) error {
+func (c *UserController) HandleDeleteUserById(ctx *flux.Context) error {
     id := ctx.Param("id")
-    return ctx.JSON(forge.H{
+    return ctx.JSON(flux.H{
         "message": "Delete user",
         "id": id,
     })
@@ -677,7 +677,7 @@ func (c *UserController) HandleDeleteUserById(ctx *forge.Context) error {
 Generate a new model with:
 
 \`\`\`bash
-forge make:model Product --migration
+flux make:model Product --migration
 \`\`\`
 
 This creates:
@@ -714,7 +714,7 @@ func (Product) TableName() string {
 Generate a new middleware with:
 
 \`\`\`bash
-forge make:middleware Auth
+flux make:middleware Auth
 \`\`\`
 
 This creates a file at \`app/middleware/auth.go\` with this structure:
@@ -723,19 +723,19 @@ This creates a file at \`app/middleware/auth.go\` with this structure:
 package middleware
 
 import (
-    "github.com/goforgl/forge/pkg/forge"
+    "github.com/Fluxgo/flux/pkg/flux"
 )
 
 // Auth middleware handles authentication
-func Auth() forge.MiddlewareFunc {
-    return func(next forge.HandlerFunc) forge.HandlerFunc {
-        return func(ctx *forge.Context) error {
+func Auth() flux.MiddlewareFunc {
+    return func(next flux.HandlerFunc) flux.HandlerFunc {
+        return func(ctx *flux.Context) error {
             // Check authentication here
             
             // Example: Check for a token in the Authorization header
             token := ctx.Get("Authorization")
             if token == "" {
-                return ctx.Status(401).JSON(forge.H{
+                return ctx.Status(401).JSON(flux.H{
                     "error": "Unauthorized",
                 })
             }
@@ -755,7 +755,7 @@ func Auth() forge.MiddlewareFunc {
 Generate a new service with:
 
 \`\`\`bash
-forge make:service UserService
+flux make:service UserService
 \`\`\`
 
 This creates a file at \`app/services/user_service.go\` with this structure:
@@ -764,16 +764,16 @@ This creates a file at \`app/services/user_service.go\` with this structure:
 package services
 
 import (
-    "github.com/goforgl/forge/pkg/forge"
+    "github.com/Fluxgo/flux/pkg/flux"
 )
 
 // UserService handles user-related business logic
 type UserService struct {
-    app *forge.Application
+    app *flux.Application
 }
 
 // NewUserService creates a new UserService
-func NewUserService(app *forge.Application) *UserService {
+func NewUserService(app *flux.Application) *UserService {
     return &UserService{
         app: app,
     }
@@ -815,12 +815,12 @@ func (s *UserService) Delete(id string) error {
 Generate a new microservice with:
 
 \`\`\`bash
-forge make:microservice user-service --with-db --with-auth
+flux make:microservice user-service --with-db --with-auth
 \`\`\`
 
 This creates a full microservice project with the appropriate structure and dependencies.
 
-The scaffolding tools in Forge help you maintain consistent code structure and follow best practices, increasing your development speed and code quality.
+The scaffolding tools in Flux help you maintain consistent code structure and follow best practices, increasing your development speed and code quality.
         `
       }
     ]
@@ -836,18 +836,18 @@ The scaffolding tools in Forge help you maintain consistent code structure and f
         content: `
 # Database Setup
 
-Forge uses GORM as its ORM for database operations, supporting PostgreSQL, MySQL, SQLite, and SQL Server.
+Flux uses GORM as its ORM for database operations, supporting PostgreSQL, MySQL, SQLite, and SQL Server.
 
 ## Configuration
 
-Configure your database connection in \`forge.yaml\`:
+Configure your database connection in \`flux.yaml\`:
 
 \`\`\`yaml
 database:
   driver: postgres        # postgres, mysql, sqlite, sqlserver
   host: localhost
   port: 5432
-  name: forgeapp
+  name: fluxapp
   username: postgres
   password: secret
 \`\`\`
@@ -855,13 +855,13 @@ database:
 Or programmatically in your \`main.go\`:
 
 \`\`\`go
-app, err := forge.New(&forge.Config{
+app, err := flux.New(&flux.Config{
     
-    Database: forge.DatabaseConfig{
+    Database: flux.DatabaseConfig{
         Driver:   "postgres",
         Host:     "localhost",
         Port:     5432,
-        Name:     "forgeapp",
+        Name:     "fluxapp",
         Username: "postgres",
         Password: "secret",
     },
@@ -870,7 +870,7 @@ app, err := forge.New(&forge.Config{
 
 ## Connection Management
 
-Forge automatically manages database connections for you:
+Flux automatically manages database connections for you:
 
 - Connection pooling for efficient resource usage
 - Connection retries for resilience
@@ -882,12 +882,12 @@ Access the database instance in your controllers and services:
 
 \`\`\`go
 // In a controller
-func (c *UserController) HandleGetUsers(ctx *forge.Context) error {
+func (c *UserController) HandleGetUsers(ctx *flux.Context) error {
     db := ctx.App().DB()
     
     // Use the database...
     
-    return ctx.JSON(forge.H{
+    return ctx.JSON(flux.H{
         "message": "Success",
     })
 }
@@ -895,11 +895,11 @@ func (c *UserController) HandleGetUsers(ctx *forge.Context) error {
 
 ## Multiple Databases
 
-Forge supports connecting to multiple databases:
+Flux supports connecting to multiple databases:
 
 \`\`\`go
 // Define a secondary database connection
-secondaryDB, err := forge.NewDatabase(&forge.DatabaseConfig{
+secondaryDB, err := flux.NewDatabase(&flux.DatabaseConfig{
     Driver:   "mysql",
     Host:     "localhost",
     Port:     3306,
@@ -918,7 +918,7 @@ analytics := secondaryDB.DB.Table("events")
 
 ## Transaction Support
 
-Forge provides convenient transaction helpers:
+Flux provides convenient transaction helpers:
 
 \`\`\`go
 func CreateUserWithProfile(db *gorm.DB, user User, profile Profile) error {
@@ -942,13 +942,13 @@ func CreateUserWithProfile(db *gorm.DB, user User, profile Profile) error {
 Enable SQL query logging in development mode:
 
 \`\`\`go
-app, err := forge.New(&forge.Config{
+app, err := flux.New(&flux.Config{
     // Other config...
     LogLevel: "debug",  // This will enable SQL logging
 })
 \`\`\`
 
-Forge makes database operations simple and intuitive while maintaining the flexibility and power of GORM for more complex queries and operations.
+Flux makes database operations simple and intuitive while maintaining the flexibility and power of GORM for more complex queries and operations.
         `
       },
       {
@@ -958,14 +958,14 @@ Forge makes database operations simple and intuitive while maintaining the flexi
         content: `
 # Migrations
 
-Forge provides a migration system to manage database schema changes.
+Flux provides a migration system to manage database schema changes.
 
 ## Creating Migrations
 
 Generate a new migration:
 
 \`\`\`bash
-forge make:migration create_users_table
+flux make:migration create_users_table
 \`\`\`
 
 This creates a migration file in the \`database/migrations\` directory:
@@ -975,12 +975,12 @@ This creates a migration file in the \`database/migrations\` directory:
 package migrations
 
 import (
-    "github.com/goforgl/forge/pkg/forge"
+    "github.com/Fluxgo/flux/pkg/flux",
     "gorm.io/gorm"
 )
 
 func init() {
-    forge.RegisterMigration(&forge.Migration{
+    flux.RegisterMigration(&flux.Migration{
         Name: "create_users_table",
         Up: func(db *gorm.DB) error {
             return db.Exec(\`
@@ -1010,13 +1010,13 @@ You can also use GORM's AutoMigrate feature:
 package migrations
 
 import (
-    "github.com/goforgl/forge/pkg/forge"
+    "github.com/Fluxgo/flux/pkg/flux",
     "gorm.io/gorm"
     "yourapp/app/models"
 )
 
 func init() {
-    forge.RegisterMigration(&forge.Migration{
+    flux.RegisterMigration(&flux.Migration{
         Name: "create_products_table",
         Up: func(db *gorm.DB) error {
             return db.AutoMigrate(&models.Product{})
@@ -1033,7 +1033,7 @@ func init() {
 Run pending migrations:
 
 \`\`\`bash
-forge db:migrate
+flux db:migrate
 \`\`\`
 
 ## Rolling Back Migrations
@@ -1041,13 +1041,13 @@ forge db:migrate
 Roll back the most recent migration:
 
 \`\`\`bash
-forge db:rollback
+flux db:rollback
 \`\`\`
 
 Roll back multiple steps:
 
 \`\`\`bash
-forge db:rollback --steps=3
+flux db:rollback --steps=3
 \`\`\`
 
 ## Reset Database
@@ -1055,7 +1055,7 @@ forge db:rollback --steps=3
 Reset the database (drop all tables and run all migrations):
 
 \`\`\`bash
-forge db:reset
+flux db:reset
 \`\`\`
 
 ## Migration Status
@@ -1063,7 +1063,7 @@ forge db:reset
 Check the status of migrations:
 
 \`\`\`bash
-forge db:status
+flux db:status
 \`\`\`
 
 ## Programmatic Migration
@@ -1094,7 +1094,7 @@ Migrations are a crucial part of database management, enabling you to evolve you
         content: `
 # Models
 
-Models in Forge represent your database tables and provide methods to interact with your data.
+Models in Flux represent your database tables and provide methods to interact with your data.
 
 ## Defining Models
 
@@ -1129,13 +1129,13 @@ func (User) TableName() string {
 Generate a new model using the CLI:
 
 \`\`\`bash
-forge make:model User
+flux make:model User
 \`\`\`
 
 With a migration:
 
 \`\`\`bash
-forge make:model Product --migration
+flux make:model Product --migration
 \`\`\`
 
 ## GORM Tags
@@ -1224,8 +1224,8 @@ Examples of using models with GORM:
 \`\`\`go
 // Create a new record
 user := models.User{
-    Name:  "John Doe",
-    Email: "john@example.com",
+    Name:  "Yemi Dev",
+    Email: "yemi@flgo.com",
 }
 db.Create(&user)
 
@@ -1235,10 +1235,10 @@ db.First(&user, 1) // Find user with ID 1
 
 // Find a record by condition
 var user models.User
-db.Where("email = ?", "john@example.com").First(&user)
+db.Where("email = ?", "yemi@flgo.com").First(&user)
 
 // Update a record
-db.Model(&user).Update("name", "Jane Doe")
+db.Model(&user).Update("name", "Engineer Yemi")
 
 // Delete a record
 db.Delete(&user)
@@ -1259,7 +1259,7 @@ var users []models.User
 db.Scopes(Active).Find(&users)
 \`\`\`
 
-Models in Forge are designed to be simple yet powerful, leveraging GORM's features for effective database operations.
+Models in Flux are designed to be simple yet powerful, leveraging GORM's features for effective database operations.
         `
       }
     ]

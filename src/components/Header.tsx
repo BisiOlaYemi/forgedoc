@@ -22,7 +22,7 @@ const Header: React.FC = () => {
             >
               <img 
                 src={logoImage} 
-                alt="Forge Logo" 
+                alt="Flux Logo" 
                 className="h-8 w-auto" 
               />
             </motion.div>
@@ -59,7 +59,7 @@ const Header: React.FC = () => {
           </div>
           <div className="flex items-center gap-3">
             <a
-              href="https://github.com/goforgl/forge"
+              href="https://github.com/Fluxgo/flux"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center rounded-md text-sm font-medium text-gray-300 transition-colors hover:text-blue-400"
@@ -68,7 +68,7 @@ const Header: React.FC = () => {
               <span className="sr-only">GitHub</span>
             </a>
             <a
-              href="https://twitter.com/forgeframework"
+              href="https://twitter.com/fluxframework"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center rounded-md text-sm font-medium text-gray-300 transition-colors hover:text-blue-400"
