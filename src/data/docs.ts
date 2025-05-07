@@ -52,7 +52,7 @@ Get started with Flux today and experience the power of modern Go development wi
 
 Before installing Flux, ensure you have the following:
 
-- Go 1.24.2 or later installed
+- Go 1.20 or later installed
 - Basic familiarity with Go programming
 
 
