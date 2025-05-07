@@ -68,13 +68,13 @@ const Header: React.FC = () => {
               <span className="sr-only">GitHub</span>
             </a>
             <a
-              href="https://twitter.com/fluxframework"
+              href="https://x.com/goflux_"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center rounded-md text-sm font-medium text-gray-300 transition-colors hover:text-blue-400"
             >
               <Twitter className="h-5 w-5" />
-              <span className="sr-only">Twitter</span>
+              <span className="sr-only">X</span>
             </a>
             <motion.button
               whileHover={{ scale: 1.05 }}
