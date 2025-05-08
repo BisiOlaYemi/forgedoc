@@ -74,13 +74,6 @@ flux
 flux --version
 \`\`\`
 
-## Tidy the Installation:
-
-
-\`\`\`bash
-go mod tidy
-\`\`\`
-
 Now that you have Flux installed, you're ready to create your first project!
         `
       },
