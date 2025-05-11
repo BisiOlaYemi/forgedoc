@@ -274,6 +274,23 @@ func (c *UserController) HandleGetUsers(ctx *flux.Context) error {
     })
 }
 
+// HandleGetUserGroups handles GET /user/groups
+func (c *UserController) HandleGetUserGroups(ctx *flux.Context) error {
+    // You can fetch user groups from a database
+    // Example with GORM:
+    var groups []models.Group
+    if err := ctx.App().DB().Find(&groups).Error; err != nil {
+        return ctx.Status(500).JSON(flux.H{
+            "error": "Failed to fetch user groups",
+        })
+    }
+    
+    return ctx.JSON(flux.H{
+        "message": "User groups retrieved successfully",
+        "groups": groups,
+    })
+}
+
 // HandleGetUserById handles GET /user/:id
 func (c *UserController) HandleGetUserById(ctx *flux.Context) error {
     id := ctx.Param("id")
@@ -627,6 +644,23 @@ type UserController struct {
 func (c *UserController) HandleGetUsers(ctx *flux.Context) error {
     return ctx.JSON(flux.H{
         "message": "List all users",
+    })
+}
+
+// HandleGetUserGroups handles GET /user/groups
+func (c *UserController) HandleGetUserGroups(ctx *flux.Context) error {
+    // You can fetch user groups from a database
+    // Example with GORM:
+    var groups []models.Group
+    if err := ctx.App().DB().Find(&groups).Error; err != nil {
+        return ctx.Status(500).JSON(flux.H{
+            "error": "Failed to fetch user groups",
+        })
+    }
+    
+    return ctx.JSON(flux.H{
+        "message": "User groups retrieved successfully",
+        "groups": groups,
     })
 }
 
