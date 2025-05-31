@@ -70,9 +70,14 @@ Verify the installation with:
 flux
 \`\`\`
 
+If you see the Flux CLI help output, the installation was successful.
+
+In case you're using a different shell or environment, you may need to add the Go bin directory to your PATH:
+For example, if you installed Go in your home directory:
 \`\`\`bash
-flux --version
+export PATH=$PATH:$HOME/go/bin
 \`\`\`
+If you installed Go in a custom location, adjust the path accordingly.
 
 Now that you have Flux installed, you're ready to create your first project!
         `
