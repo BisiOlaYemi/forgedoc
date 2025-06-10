@@ -121,6 +121,14 @@ my-app/
 └── main.go               # Application entry point
 \`\`\`
 
+
+## Tidy your Application after cd into my-app:
+
+\`\`\`bash
+go mod tidy
+
+\`\`\`
+
 ## Running the Application
 
 Start the development server with hot-reloading:
