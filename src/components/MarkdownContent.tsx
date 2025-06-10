@@ -31,7 +31,7 @@ const CopyableCodeBlock = ({ language, code }: { language: string; code: string 
       <div className="absolute top-2 right-2 z-10">
         <button 
           onClick={handleCopy} 
-          className="p-2 rounded bg-gray-950 border border-gray-700 opacity-0 group-hover:opacity-100 transition-opacity"
+          className="p-2 rounded bg-gray-800 border border-gray-700 opacity-0 group-hover:opacity-100 transition-opacity"
           title="Copy code"
         >
           {copied ? <Check size={16} className="text-green-400" /> : <Copy size={16} className="text-gray-300" />}
@@ -41,7 +41,7 @@ const CopyableCodeBlock = ({ language, code }: { language: string; code: string 
         language={language} 
         style={docco}
         customStyle={{
-          backgroundColor: '#1F2937', 
+          backgroundColor: '#02060a', 
           borderRadius: '0.375rem',
           padding: '1rem',
           paddingRight: '3rem'
